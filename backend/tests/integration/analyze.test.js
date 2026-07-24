@@ -62,7 +62,6 @@ describe("POST /api/analyze", () => {
   });
 
   it("Failure: Should handle non-existent domains gracefully", async () => {
-    // Simulate a DNS resolution failure
     const networkError = new Error("getaddrinfo ENOTFOUND");
     networkError.code = "ENOTFOUND";
     global.fetch.mockRejectedValueOnce(networkError);

@@ -8,14 +8,12 @@ export const analyzeController = async (req, res, next) => {
     
     logger.info(`Starting analysis for URL: ${url}`);
     
-    // All heavy lifting and logic is pushed to the service layer
     const report = await analyzePage(url);
     
     logger.info(`Successfully analyzed URL: ${url}`, { responseTime: report.responseTimeMs });
     
     return res.status(200).json(successResponse(report));
   } catch (error) {
-    // Pass the error (whether AppError or unknown) to the global error handler
     next(error);
   }
 };

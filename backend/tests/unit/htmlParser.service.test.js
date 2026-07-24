@@ -28,18 +28,15 @@ describe("htmlParser.service.js", () => {
     expect(result.h1s).toHaveLength(1);
     expect(result.h1s[0]).toBe("Welcome to the test page");
     
-    // Total 2 images, 1 is missing alt (hasAlt should be false for the second one)
     expect(result.images).toHaveLength(2);
     expect(result.images[0].hasAlt).toBe(true);
     expect(result.images[1].hasAlt).toBe(false);
 
-    // Text extraction should capture all inner text in the body
     expect(result.rawText).toContain("Welcome to the test page");
     expect(result.rawText).toContain("This is a paragraph of text with several words.");
   });
 
   it("Failure Case 1: Should handle completely empty or missing elements gracefully without crashing", () => {
-    // HTML with absolutely nothing we are looking for
     const html = `
       <!DOCTYPE html>
       <html>
@@ -87,7 +84,6 @@ describe("htmlParser.service.js", () => {
 
     const result = extractHtmlData(html);
     
-    // The raw text should ONLY contain "Real text", not the JS or CSS.
     expect(result.rawText.trim()).toBe("Real text");
     expect(result.rawText).not.toContain("malicious");
     expect(result.rawText).not.toContain("background: red");

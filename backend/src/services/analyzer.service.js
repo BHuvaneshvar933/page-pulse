@@ -2,23 +2,13 @@ import config from "../config/config.js";
 import { AppError } from "../utils/AppError.js";
 import { extractHtmlData } from "./htmlParser.service.js";
 
-/**
- * Computes the word count from a raw text string.
- */
+
 const computeWordCount = (text) => {
   if (!text) return 0;
-  // Replace newlines and multiple spaces with a single space, trim, and split
   const words = text.trim().split(/\s+/);
   return words.length === 1 && words[0] === "" ? 0 : words.length;
 };
 
-/**
- * Core Orchestrator for analyzing a page.
- * 1. Fetches the URL
- * 2. Validates Response
- * 3. Passes HTML to parser
- * 4. Computes business metrics
- */
 export const analyzePage = async (url) => {
   const startTime = Date.now();
   let response;
@@ -31,7 +21,6 @@ export const analyzePage = async (url) => {
     response = await fetch(url, {
       signal: controller.signal,
       headers: {
-        // Adding a User-Agent prevents many sites from blocking the request (403 Forbidden)
         "User-Agent": "PagePulse-Analyzer/1.0"
       }
     });

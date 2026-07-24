@@ -13,7 +13,7 @@ export const extractHtmlData = (html) => {
   // Extract Title
   const title = $("title").text().trim();
 
-  // Extract Meta Description (Check standard name first, fallback to OpenGraph property)
+  // Extract Meta Description 
   let metaDescription = $('meta[name="description"]').attr("content");
   if (!metaDescription) {
     metaDescription = $('meta[property="og:description"]').attr("content");
@@ -26,8 +26,6 @@ export const extractHtmlData = (html) => {
   });
 
   // Extract Images and whether they have an alt attribute
-  // Note: An empty alt attribute (alt="") is technically valid for decorative images,
-  // but for the sake of the assignment, missing alt means the attribute doesn't exist.
   const images = [];
   $("img").each((_, el) => {
     const alt = $(el).attr("alt");
