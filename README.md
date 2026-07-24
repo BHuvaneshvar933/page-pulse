@@ -18,9 +18,7 @@ Key goals included:
 
 ---
 
-## 📸 Screenshots
-
-*(Add your images to the `screenshots/` folder, they will render here!)*
+## Screenshots
 
 **Results View**
 ![Results](screenshots/success.png)
@@ -30,7 +28,7 @@ Key goals included:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 Frontend
@@ -51,7 +49,7 @@ Analyzer Service
 Formatted JSON Response
 ```
 
-## 🚀 Deployment & Tech Stack
+## Deployment & Tech Stack
 
 - **Backend:** Node.js 20+ (Express, Cheerio)
 - **Frontend:** Vanilla HTML/CSS/JavaScript
@@ -60,7 +58,7 @@ Formatted JSON Response
 
 ---
 
-## 📖 API Contract
+## API Contract
 
 **Endpoint:** `POST /api/analyze`
 
@@ -93,7 +91,7 @@ All responses follow the exact same response envelope.
 
 ---
 
-## 🧠 Engineering Decisions & Trade-offs
+## Engineering Decisions & Trade-offs
 
 ### Why Cheerio instead of Puppeteer?
 The assignment only requires parsing the initial HTML response. Cheerio is significantly faster, consumes far less memory, and avoids the startup overhead of launching a browser. Although Puppeteer supports JavaScript-rendered applications, that additional capability was unnecessary for the current scope and would have negatively impacted response time.
@@ -118,7 +116,7 @@ Although analyzing a URL is idempotent, I chose `POST /api/analyze` over a `GET`
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The project includes both unit and integration tests.
 
@@ -137,7 +135,7 @@ The goal of the tests is not simply coverage, but confidence that the API behave
 
 ---
 
-## 🔒 Security Considerations
+## Security Considerations
 
 Although this is an internship project, several production-oriented practices were considered:
 - Request timeout protection
@@ -148,7 +146,7 @@ Although this is an internship project, several production-oriented practices we
 
 ---
 
-## 📌 Assumptions
+## Assumptions
 
 This project makes the following assumptions:
 - Target URLs are publicly accessible.
@@ -158,7 +156,7 @@ This project makes the following assumptions:
 
 ---
 
-## 💡 Reflection
+## Reflection
 
 If I had another day to work on this project, I would prioritize:
 - Support JavaScript-rendered pages using Puppeteer.
@@ -168,6 +166,6 @@ If I had another day to work on this project, I would prioritize:
 
 ---
 
-## 🤖 AI Usage Statement
+## AI Usage Statement
 
 AI was used primarily as an engineering assistant for brainstorming, reviewing architectural decisions, and identifying edge cases. Every implementation was manually written, tested, debugged, and refined before being included in the final submission.
