@@ -168,4 +168,4 @@ If I had another day to work on this project, I would prioritize:
 
 ## AI Usage Statement
 
-AI was used primarily as an engineering assistant for brainstorming, reviewing architectural decisions, and identifying edge cases. Every implementation was manually written, tested, debugged, and refined before being included in the final submission.
+AI was used primarily as an engineering assistant for brainstorming, reviewing architectural decisions, and identifying edge cases. Every implementation was manually written, tested, debugged, and refined using AI before being included in the final submission.
