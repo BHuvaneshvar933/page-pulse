@@ -19,7 +19,7 @@ const metricH1 = document.getElementById('metric-h1');
 const metricAlt = document.getElementById('metric-alt');
 
 // Configuration
-const API_URL = 'http://localhost:5000/api/analyze';
+const API_URL = 'https://page-pulse-iyjt.onrender.com/api/analyze';
 
 // Form Submit Handler
 form.addEventListener('submit', async (e) => {
@@ -66,7 +66,7 @@ form.addEventListener('submit', async (e) => {
 function setLoadingState(isLoading) {
     urlInput.disabled = isLoading;
     submitBtn.disabled = isLoading;
-    
+
     if (isLoading) {
         btnText.textContent = 'Analyzing...';
         loader.classList.remove('hidden');
@@ -89,7 +89,7 @@ function populateResults(data) {
 
     // Metrics
     metricStatus.textContent = data.httpStatus;
-    
+
     // Dynamic color coding for HTTP status
     if (data.httpStatus >= 200 && data.httpStatus < 300) {
         metricStatus.style.color = 'var(--text-primary)';
